@@ -24,7 +24,7 @@ const levels = [
     ['#', '#', '.', '#', '#', '#', '#', '.', '#', '.', '#'],
     ['#', '#', '.', '.', '.', '#', '.', '.', '#', '.', '#'],
     ['#', '#', '#', '#', '.', '#', '.', '#', '#', '.', '#'],
-    ['#', '#', '.', '.', '.', '.', '.', '#', '#', '.', '#'],
+    ['#', '#', '.', '.', '.', '.', '.', '#', '.', '.', '#'],
     ['#', '#', '#', '#', '#', '#', '#', '#', 'X', '#', '#'],
   ],
   // Nível 3
@@ -45,7 +45,7 @@ const levels = [
     ['#', '0', '.', '.', '.', '#', '#', '.', '.', '#'],
     ['#', '#', '#', '#', '.', '#', '#', '.', '#', '#'],
     ['#', '.', '.', '#', '.', '.', '.', '.', '#', '#'],
-    ['#', '#', '.', '#', '#', '#', '#', '.', '#', 'X'],
+    ['#', '#', '.', '#', '#', '#', '#', '.', '.', 'X'],
     ['#', '#', '.', '.', '.', '#', '.', '.', '#', '#'],
     ['#', '.', '#', '#', '.', '#', '.', '#', '#', '#'],
     ['#', '.', '.', '.', '.', '.', '.', '#', '#', '#'],
@@ -56,11 +56,11 @@ const levels = [
     ['#', '#', '#', '#', '#', '#', '#', '#', '#', '#'],
     ['#', '0', '.', '.', '#', '.', '.', '.', '.', '#'],
     ['#', '#', '#', '.', '#', '#', '#', '#', '.', '#'],
-    ['#', '.', '#', '.', '.', '.', '.', '#', '.', '#'],
+    ['#', '.', '.', '.', '.', '.', '.', '#', '.', '#'],
     ['#', '#', '#', '#', '#', '#', '.', '#', '.', '#'],
     ['#', 'X', '.', '.', '.', '#', '.', '.', '.', '#'],
-    ['#', '#', '#', '#', '#', '#', '#', '#', '#', '#'],
-    ['#', '.', '.', '.', '.', '.', '.', '#', '#', '#'],
+    ['#', '.', '#', '#', '#', '#', '#', '#', '.', '#'],
+    ['#', '.', '.', '.', '.', '.', '.', '.', '.', '#'],
     ['#', '#', '#', '#', '#', '#', '#', '#', '#', '#'],
   ],
   // Nível 6
@@ -78,10 +78,10 @@ const levels = [
   // Nível 7
   [
     ['#', '#', '#', '#', '#', '#', '#', '#', '#', '#'],
-    ['#', '0', '.', '#', '.', '.', '.', '#', '.', '#'],
+    ['#', '0', '.', '#', '.', '.', '.', '.', '.', '#'],
     ['#', '.', '.', '#', '#', '#', '.', '#', '.', '#'],
     ['#', '#', '.', '.', '.', '.', '.', '#', '.', '#'],
-    ['#', 'X', '#', '#', '#', '#', '#', '#', '.', '#'],
+    ['#', 'X', '#', '#', '#', '#', '#', '.', '.', '#'],
     ['#', '.', '.', '.', '.', '.', '.', '.', '#', '#'],
     ['#', '#', '#', '#', '#', '#', '#', '#', '#', '#'],
     ['#', '.', '.', '.', '.', '.', '.', '#', '#', '#'],
@@ -91,35 +91,37 @@ const levels = [
   [
     ['#', '#', '#', '#', '#', '#', '#', '#', '#', '#'],
     ['#', '0', '.', '.', '.', '#', '.', '.', '.', '#'],
-    ['#', '#', '#', '#', '#', '.', '#', '#', '#', '#'],
+    ['#', '#', '#', '#', '.', '.', '#', '#', '#', '#'],
     ['#', '.', '.', '#', '.', '.', '.', '.', '.', '#'],
     ['#', 'X', '#', '#', '#', '#', '.', '#', '#', '#'],
-    ['#', '.', '.', '.', '.', '.', '.', '.', '.', '#'],
-    ['#', '#', '#', '#', '#', '#', '#', '#', '#', '#'],
-    ['#', '.', '.', '.', '.', '.', '.', '#', '#', '#'],
+    ['#', '.', '.', '#', '.', '.', '.', '.', '.', '#'],
+    ['#', '#', '.', '#', '#', '#', '#', '#', '.', '#'],
+    ['#', '.', '.', '.', '#', '.', '.', '#', '.', '#'],
+    ['#', '#', '#', '.', '.', '.', '#', '#', '.', '#'],
+    ['#', '.', '.', '.', '#', '.', '.', '.', '.', '#'],
     ['#', '#', '#', '#', '#', '#', '#', '#', '#', '#'],
   ],
   // Nível 9
   [
     ['#', '#', '#', '#', '#', '#', '#', '#', '#', '#'],
     ['#', '0', '.', '.', '.', '#', '.', '.', '.', '#'],
-    ['#', '#', '#', '#', '#', '#', '#', '#', '.', '#'],
+    ['#', '#', '#', '#', '.', '#', '#', '#', '.', '#'],
     ['#', '.', '.', '#', '.', '.', '.', '#', '.', '#'],
     ['#', 'X', '#', '#', '#', '#', '.', '.', '.', '#'],
-    ['#', '#', '#', '#', '#', '#', '#', '#', '#', '#'],
+    ['#', '.', '#', '#', '#', '#', '.', '#', '#', '#'],
     ['#', '.', '.', '.', '.', '.', '.', '#', '#', '#'],
     ['#', '#', '#', '#', '#', '#', '#', '#', '#', '#'],
   ],
   // Nível 10
   [
     ['#', '#', '#', '#', '#', '#', '#', '#', '#', '#'],
-    ['#', '0', '.', '.', '.', '.', '#', '.', '.', '#'],
-    ['#', '#', '#', '#', '#', '#', '#', '#', '#', '#'],
-    ['#', '.', '.', '#', '.', '.', '.', '.', '.', '#'],
-    ['#', '#', '#', '#', '#', '#', '#', 'X', '#', '#'],
+    ['#', '0', '.', '.', '.', '.', '.', '.', '.', '#'],
+    ['#', '.', '#', '#', '#', '#', '#', '#', '#', '#'],
+    ['#', '.', '.', '#', '.', '.', '#', '.', '.', '#'],
+    ['#', '#', '#', '#', '#', '#', 'X', '#', '.', '#'],
     ['#', '.', '.', '.', '.', '.', '.', '#', '#', '#'],
-    ['#', '#', '#', '#', '#', '#', '#', '#', '#', '#'],
-    ['#', '.', '.', '.', '.', '.', '.', '#', '#', '#'],
+    ['#', '.', '#', '#', '#', '#', '#', '.', '.', '#'],
+    ['#', '.', '.', '.', '.', '.', '.', '.', '#', '#'],
     ['#', '#', '#', '#', '#', '#', '#', '#', '#', '#'],
   ],
 ];
@@ -129,10 +131,13 @@ const MazeGame = () => {
   const [maze, setMaze] = useState(levels[currentLevel]);
   const [playerPos, setPlayerPos] = useState({ row: 1, col: 1 });
   const [time, setTime] = useState(0);
+  const [levelTimes, setLevelTimes] = useState([]);
   const [intervalId, setIntervalId] = useState(null);
+  const [hasMoved, setHasMoved] = useState(false);
 
   // Inicia o cronômetro ao carregar a fase
   useEffect(() => {
+    resetPlayer();
     if (intervalId) clearInterval(intervalId);
     const id = setInterval(() => {
       setTime((prevTime) => prevTime + 1);
@@ -141,6 +146,17 @@ const MazeGame = () => {
 
     return () => clearInterval(id);
   }, [currentLevel]);
+
+  // Função que reseta o jogador para o início da fase
+  const resetPlayer = () => {
+    const newMaze = maze.map((row) =>
+      row.map((cell) => (cell === 'O' ? '.' : cell)) // Reseta a posição do jogador
+    );
+    newMaze[1][1] = 'O'; // Reseta a posição inicial do jogador
+    setMaze(newMaze);
+    setPlayerPos({ row: 1, col: 1 });
+    setHasMoved(false);
+  };
 
   // Função que movimenta o rato
   const movePlayer = (direction) => {
@@ -155,43 +171,71 @@ const MazeGame = () => {
     if (direction === 'right') newCol = col + 1;
 
     // Verifica se o movimento é válido
-    if (maze[newRow][newCol] !== '#') {
-      const updatedMaze = maze.map((row, rowIndex) =>
-        row.map((cell, colIndex) => {
-          if (rowIndex === row && colIndex === col) return '.';
-          if (rowIndex === newRow && colIndex === newCol) return 'O';
-          return cell;
-        })
-      );
+    if (newRow >= 0 && newRow < maze.length && newCol >= 0 && newCol < maze[0].length) {
+      if (maze[newRow][newCol] !== '#') {
+        const updatedMaze = maze.map((row, rowIndex) =>
+          row.map((cell, colIndex) => {
+            if (rowIndex === row && colIndex === col) return '.'; // Limpa a posição anterior
+            if (rowIndex === newRow && colIndex === newCol) return 'O'; // Atualiza a nova posição
+            return cell;
+          })
+        );
 
-      setMaze(updatedMaze);
-      setPlayerPos({ row: newRow, col: newCol });
+        setMaze(updatedMaze);
+        setPlayerPos({ row: newRow, col: newCol });
+        setHasMoved(true);
 
-      // Verificar se o jogador encontrou o queijo
-      if (maze[newRow][newCol] === 'X') {
-        clearInterval(intervalId);
-        alert(`Você encontrou o queijo! Tempo: ${time} segundos`);
-        setTime(0);
-        nextLevel();
+        // Verificar se o jogador encontrou o queijo
+        if (maze[newRow][newCol] === 'X') {
+          clearInterval(intervalId);
+          const newLevelTimes = [...levelTimes, time];
+          setLevelTimes(newLevelTimes);
+          showLevelCompletionPopup(newLevelTimes);
+          resetPlayer();
+          setCurrentLevel((prevLevel) => {
+            const nextLevel = prevLevel + 1;
+            setMaze(levels[nextLevel]); // Atualiza o labirinto para o próximo nível
+            return nextLevel < levels.length ? nextLevel : prevLevel; // Garante que não ultrapasse os níveis
+          });
+          setTime(0);
+        }
+      } else {
+        resetPlayer(); // Volta ao início da fase se colidir com a parede
       }
     }
   };
 
-  // Passa para o próximo nível
-  const nextLevel = () => {
-    if (currentLevel < levels.length - 1) {
-      setCurrentLevel((prevLevel) => prevLevel + 1);
-      setMaze(levels[currentLevel + 1]);
-      setPlayerPos({ row: 1, col: 1 });
-    } else {
-      alert('Parabéns! Você completou todos os níveis!');
-    }
+  // Exibe o popup ao finalizar todos os níveis
+  const showLevelCompletionPopup = (levelTimes) => {
+    const totalTime = levelTimes.reduce((acc, curr) => acc + curr, 0);
+    const formattedTimes = levelTimes.map((time, index) => {
+      const minutes = Math.floor(time / 60);
+      const seconds = time % 60;
+      return `Fase ${index + 1}: ${minutes}m ${seconds}s`;
+    });
+
+    Alert.alert('Você completou o jogo!', `Tempos por fase:\n${formattedTimes.join('\n')}\n\nTempo total: ${Math.floor(totalTime / 60)}m ${totalTime % 60}s`, [
+      { text: 'Reiniciar', onPress: resetGame },
+      { text: 'Sair', onPress: () => console.log('Sair do jogo') },
+    ]);
+  };
+
+  // Função para reiniciar o jogo
+  const resetGame = () => {
+    setCurrentLevel(0);
+    setMaze(levels[0]);
+    setPlayerPos({ row: 1, col: 1 });
+    setTime(0);
+    setLevelTimes([]);
   };
 
   return (
     <View style={styles.container}>
       {/* Exibe o cronômetro */}
-      <Text style={styles.timer}>Tempo: {time}s</Text>
+      <Text style={styles.timer}>
+        Tempo: {Math.floor(time / 3600)}h {Math.floor((time % 3600) / 60)}m {time % 60}s
+      </Text>
+      <Text style={styles.level}>Fase: {currentLevel + 1}</Text>
 
       {/* Renderiza o labirinto */}
       {maze.map((row, rowIndex) => (
@@ -207,25 +251,24 @@ const MazeGame = () => {
       {/* Botões para movimentar o rato */}
       <View style={styles.controls}>
         <TouchableOpacity onPress={() => movePlayer('up')} style={styles.controlButton}>
-          <Text style={styles.controlButtonText}>Up</Text>
+          <Text style={styles.controlButtonText}>↑</Text>
         </TouchableOpacity>
         <View style={styles.horizontalButtons}>
           <TouchableOpacity onPress={() => movePlayer('left')} style={styles.controlButton}>
-            <Text style={styles.controlButtonText}>Left</Text>
+            <Text style={styles.controlButtonText}>←</Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => movePlayer('right')} style={styles.controlButton}>
-            <Text style={styles.controlButtonText}>Right</Text>
+            <Text style={styles.controlButtonText}>→</Text>
           </TouchableOpacity>
         </View>
         <TouchableOpacity onPress={() => movePlayer('down')} style={styles.controlButton}>
-          <Text style={styles.controlButtonText}>Down</Text>
+          <Text style={styles.controlButtonText}>↓</Text>
         </TouchableOpacity>
       </View>
     </View>
   );
 };
 
-// Estilos do layout
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -241,6 +284,11 @@ const styles = StyleSheet.create({
   },
   row: {
     flexDirection: 'row',
+  },
+  level: {
+    fontSize: 18,
+    marginBottom: 20,
+    color: '#aaa'
   },
   cell: {
     width: 24,
